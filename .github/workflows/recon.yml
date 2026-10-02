@@ -1,0 +1,14 @@
+name: recon
+on:
+  workflow_dispatch:
+    inputs:
+      cmd:
+        description: 'command'
+        required: true
+        default: 'curl -sI https://nepsealpha.com'
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run
+        run: ${{ github.event.inputs.cmd }}
